@@ -12,3 +12,23 @@
  * Text Domain: add-it-on
  * Domain Path: /languages
  */
+
+// If this files is called directly, abort.
+if (!defined('WPINC')) {
+    die;
+}
+
+// Show the plugin menu in WordPress admin area
+function add_it_on_page() {
+    add_menu_page (
+        'Add It On Header, Footer and Body',
+        'Add It On Menu',
+        'manage_options',
+        'add-it-on',
+        'add_it_on_page',
+        'dashicons-hammer',
+        100
+    );
+}
+
+add_action('admin_menu', 'add_it_on_page');
