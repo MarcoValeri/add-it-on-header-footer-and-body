@@ -20,6 +20,7 @@ if (!defined('WPINC')) {
 
 // Show the plugin menu in WordPress admin area
 function add_it_on_page() {
+
     add_menu_page (
         'Add It On Header, Footer and Body',
         'Add It On Menu',
@@ -28,6 +29,14 @@ function add_it_on_page() {
         'add_it_on_page',
         'dashicons-hammer',
         100
+    );
+
+    add_submenu_page (
+        'add-it-on',
+        'Add your code',
+        'Add it on Header, Footer and Body',
+        'manage_options',
+        'add-it-on-menu',
     );
 }
 
